@@ -3,7 +3,8 @@ h2. rails_habitat plugin
 A stupid simple plugin based on the idea behind Coda Hale's "rails_environments plugin":http://blog.codahale.com/2006/04/09/rails-environments-a-plugin-for-well-rails/
 
 This plugin adds the following functionality to the Rails module to
-help with determining the current enviroment:
+help with determining the current enviroment, and is feature
+compatible with rails_environments:
 
 <pre>
   >> Rails.environment       # a convenience alias to Rails.env
@@ -28,6 +29,9 @@ define in config/environments/ (in fact that is how it learns about all
 of the environments, including the standard three). So if you define
 new environments in config/environments/ they will be picked up
 automatically. 
+
+The value of this plugin is diminished by rails 2.2, which allows you
+to do @Rails.env.development?@.
 
 Install with: @script/plugin install git://github.com/tobias/rails_habitat.git@
 
