@@ -1,0 +1,36 @@
+h2. rails_habitat plugin
+
+A stupid simple plugin based on the idea behind Coda Hale's "rails_environments plugin":http://blog.codahale.com/2006/04/09/rails-environments-a-plugin-for-well-rails/
+
+This plugin adds the following functionality to the Rails module to
+help with determining the current enviroment:
+
+<pre>
+  >> Rails.environment       # a convenience alias to Rails.env
+  => "development"
+  >> Rails.development?
+  => true
+  >> Rails.not_development?
+  => false
+  >> Rails.production?
+  => false
+  >> Rails.not_production?
+  => true
+  >> Rails.test?
+  => false
+  >> Rails.not_test?
+  => true
+</pre>
+
+Not only does it provide @env?@ and @not_env?@ methods for the standard
+environments, it also provides those methods for any environment you
+define in config/environments/ (in fact that is how it learns about all
+of the environments, including the standard three). So if you define
+new environments in config/environments/ they will be picked up
+automatically. 
+
+Install with: @script/plugin install git://github.com/tobias/rails_habitat.git@
+
+Copyright &copy; 2009 Tobias Crawley, released under the MIT license
+
+
